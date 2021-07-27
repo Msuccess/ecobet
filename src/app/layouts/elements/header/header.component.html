@@ -4,27 +4,32 @@
     <div class="header-bottom">
       <div class="container">
         <nav class="navbar navbar-expand-xl">
-          <a class="site-logo site-title" href="index.html"><img style="margin-top: 12px"
-              src="assets/images/ecobet_logo.png" alt="site-logo" /></a>
+          <a class="site-logo site-title" [routerLink]="['/index']" routerLinkActive="router-link-active"><img
+              style="margin-top: 12px" src="assets/images/ecobet_logo.png" alt="site-logo" /></a>
+
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="menu-toggle"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav main-menu ml-auto">
-              <li><a href="home-two.html">Home</a></li>
-              <li><a href="lottery-result%20-%20dark.html">results</a></li>
+              <li>
+                <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+              </li>
+              <li>
+                <a [routerLink]="['/home']" routerLinkActive="router-link-active">results</a>
+              </li>
               <li class="menu_has_children">
                 <a href="#0">lotteries</a>
                 <ul class="sub-menu">
                   <li>
-                    <a href="all-lottery-one%20-%20dark.html">all lotteries One</a>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active">all lotteries One</a>
                   </li>
                   <li>
-                    <a href="all-lottery-two%20-%20dark.html">all lotteries Two</a>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active">all lotteries Two</a>
                   </li>
                   <li>
-                    <a href="all-lottery-three%20-%20dark.html">all lotteries three</a>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active">all lotteries three</a>
                   </li>
                 </ul>
               </li>
@@ -43,24 +48,25 @@
                 </ul>
               </li> -->
               <li class="menu_has_children">
-                <a href="#0">My Account</a>
+                <a [routerLink]="['/home']" routerLinkActive="router-link-active">My Account</a>
                 <ul class="sub-menu">
-                  <li><a href="about-two.html">about us</a></li>
-                  <li><a href="affiliate-two.html">affiliate</a></li>
+                  <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">about us</a></li>
+                  <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">affiliate</a></li>
                   <li>
-                    <a href="how-to-play%20-%20dark.html">how to play</a>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active">how to play</a>
                   </li>
                   <li>
-                    <a href="latest-winner%20-%20dark.html">latest winner</a>
+                    <a [routerLink]="['/home']" routerLinkActive="router-link-active">latest winner</a>
                   </li>
-                  <li><a href="faq%20-%20dark.html">faq</a></li>
-                  <li><a href="error-404%20-%20dark.html">ERROR-404</a></li>
+                  <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">faq</a></li>
+                  <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">ERROR-404</a></li>
                 </ul>
               </li>
-              <li><a href="contact%20-%20dark.html">Login</a></li>
+              <li><a href="javascript:void(0);" (click)="login()">Login</a></li>
             </ul>
             <div class="header-join-part">
-              <button type="button" class="cmn-btn" data-toggle="modal" data-target="#exampleModal">
+              <button type="button" class="cmn-btn" data-toggle="modal" data-target="#exampleModal"
+                (click)="buyTicket()">
                 BUY TICKET NOW!
               </button>
             </div>

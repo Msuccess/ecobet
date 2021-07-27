@@ -1,0 +1,49 @@
+<form class="login-form cmn-frm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="frm-group">
+    <label>Username or Email Address</label>
+    <input type="email" formControlName="email" id="login_email" placeholder="Username or Email Address" />
+    <i class="fa fa-user"></i>
+
+    <p class="text-danger" *ngIf="submitted && formControl.email.errors">
+      <span *ngIf="formControl.email.errors.required">Email is required</span>
+      <span *ngIf="formControl.email.errors.email">Email is required</span>
+    </p>
+  </div>
+  <div class="frm-group">
+    <label>Password</label>
+    <input type="password" formControlName="password" id="login_pass" placeholder="Enter Password" />
+    <i class="fa fa-lock"></i>
+    <p class="text-danger" *ngIf="submitted && formControl.password.errors">
+      <span *ngIf="formControl.password.errors.required">Password is required</span>
+    </p>
+  </div>
+  <div class="frm-group">
+    <input type="submit" id="login_submit2" value="login" />
+  </div>
+  <div class="frm-group">
+    <div class="checkbox-area">
+      <input type="checkbox" id="login_remember_pass" />
+      <label for="login_remember_pass">Remember Password</label>
+    </div>
+    <div class="forgot-pass-area">
+      <a href="#0">Forgot Password?</a>
+    </div>
+  </div>
+  <div class="frm-group">
+    <div class="or-text">
+      <span>Or login with</span>
+    </div>
+  </div>
+  <div class="frm-group">
+    <div class="login-with-area">
+      <a href="#" class="facebook"><i class="fa fa-facebook-f"></i>facebook</a>
+      <a href="#" class="google"><i class="fa fa-google-plus"></i>facebook</a>
+      <a href="#" class="twitter"><i class="fa fa-twitter"></i>facebook</a>
+    </div>
+  </div>
+</form>
+<div class="have-not-account">
+  <p>
+    You don’t have an account?<a href="#0">Register Now</a>
+  </p>
+</div>

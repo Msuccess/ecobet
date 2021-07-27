@@ -1,0 +1,10 @@
+::ng-deep {
+  .modal-dialog {
+    width: 620px !important;
+    max-width: 620px !important;
+
+    .modal-content {
+      border-radius: 12px !important;
+    }
+  }
+}
