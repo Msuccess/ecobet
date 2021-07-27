@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ConfirmPasswordValidator } from 'src/app/core/validators/confirmpassword.validator';
+import { Store } from '@ngxs/store';
+import { ConfirmPasswordValidator } from 'src/app/core/validators/confirm_password.validator';
+import { Register } from '../../core/store/authentication.action';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +17,7 @@ export class RegistrationComponent implements OnInit {
   // @Select(actionsExecuting([UpdateProfile]))
   // loading$: Observable<ActionsExecuting>;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
     this.buildForm();
@@ -42,7 +44,7 @@ export class RegistrationComponent implements OnInit {
     if (this.registrationForm.invalid) {
       return;
     }
-    /* Dispatch Action Here */
+    this.store.dispatch(new Register(this.registrationForm.value)).subscribe();
   }
 
   get formControl(): any {

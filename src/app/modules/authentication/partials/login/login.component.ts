@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ConfirmPasswordValidator } from 'src/app/core/validators/confirmpassword.validator';
+import {
+  actionsExecuting,
+  ActionsExecuting,
+} from '@ngxs-labs/actions-executing';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { Login } from '../../core/store/authentication.action';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +16,11 @@ import { ConfirmPasswordValidator } from 'src/app/core/validators/confirmpasswor
 export class LoginComponent implements OnInit {
   loginForm: FormGroup | any;
   submitted = false;
-  user: any;
 
-  // @Select(actionsExecuting([UpdateProfile]))
-  // loading$: Observable<ActionsExecuting>;
+  @Select(actionsExecuting([Login]))
+  loading$: Observable<ActionsExecuting> | any;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private store: Store) {}
 
   ngOnInit(): void {
     this.buildForm();
@@ -36,7 +41,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    /* Dispatch Action Here */
+    this.store.dispatch(new Login(this.loginForm.value)).subscribe();
   }
 
   get formControl(): any {
