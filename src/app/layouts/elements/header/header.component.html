@@ -8,10 +8,13 @@
               style="margin-top: 12px" src="assets/images/ecobet_logo.png" alt="site-logo" /></a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            (click)="toggleNavbar()">
             <span class="menu-toggle"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'show': navbarOpen}">
             <ul class="navbar-nav main-menu ml-auto">
               <li>
                 <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
