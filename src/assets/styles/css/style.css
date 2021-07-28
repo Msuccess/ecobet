@@ -42,6 +42,23 @@
 @import url("reset.css");
 @import url("global.css");
 /*  header-section css start */
+.btn-primary {
+  background-color: var(--main-color);
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  font-size: 20px;
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
 .template-version {
   position: fixed;
   top: 20%;

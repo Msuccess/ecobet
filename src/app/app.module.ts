@@ -16,6 +16,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsModule } from '@ngxs/store';
 import { environment } from 'src/environments/environment';
 import { StoreKeys, StoreStates } from './app.store.states';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import { StoreKeys, StoreStates } from './app.store.states';
     }),
     NgxsRouterPluginModule.forRoot(),
     NgxsActionsExecutingModule.forRoot(),
+    FlatpickrModule.forRoot(),
     LayoutsModule,
     NgbModule,
     PagesModule,

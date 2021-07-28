@@ -15,11 +15,15 @@ export class HeaderComponent implements OnInit {
   constructor(private modal: NgbModal) {}
 
   login(): void {
-    this.modal.open(AuthenticationComponent);
+    this.modal.open(AuthenticationComponent, {
+      scrollable: true,
+    });
   }
 
   buyTicket(): void {
-    this.modal.open(AuthenticationComponent);
+    this.modal.open(AuthenticationComponent, {
+      scrollable: true,
+    });
   }
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;

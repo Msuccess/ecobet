@@ -1,1 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
+
+.form-control {
+  width: 100% !important;
+  padding: 10px 15px 10px 55px !important;
+  border: 1px solid #efefef !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  height: 46px !important;
+}
+
+.gender_select {
+  color: #85878f;
+  position: relative;
+  bottom: 35px;
+  left: 20px;
+}
